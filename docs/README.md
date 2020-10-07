@@ -6,9 +6,6 @@ Github itself has a lot of great tools- Branch Protection, Dependency Vulnerabil
 
 The Github Organization Manager gets around that by letting you define your standards in one place and enforce them throughout your organization. It lets you define a default standard that will apply to every repository, or a variety of standards that you can apply to different repositories based on their needs. When a new repository is created these standards will automatically apply, saving admins from dealing with manual setup each time.
 
-- TOC
-  {:toc}
-
 ## Installing
 
 This app can be installed [directly on Github](https://github.com/apps/organization-manager). Since this is an [open sorce project](https://github.com/gitconsensus/GithubOrganizer) self hosting is also an option, although it's a bit trickier.
