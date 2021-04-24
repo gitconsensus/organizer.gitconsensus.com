@@ -1,16 +1,16 @@
-# Github Organization Manager
+# GitHub Organization Manager
 
-The Github Organization Manager makes it easy to enforce standards across your organization.
+The GitHub Organization Manager makes it easy to enforce standards across your organization.
 
-Github itself has a lot of great tools- Branch Protection, Dependency Vulnerability Scanning, Projects and Labels, Issue Tracking, and so much more. The problem is that it's a serious pain for organizations that have a lot of repositories to make sure that all of their repos are being managed in the same way. Something as simple as ensuring all Pull Requests get reviewed before merging has to be managed on a project by project basis. This can be particularly painful for organizations that have compliance requirements.
+GitHub itself has a lot of great tools - Branch Protection, Dependency Vulnerability Scanning, Projects and Labels, Issue Tracking, and so much more. The problem is that it's a serious pain for organizations that have a lot of repositories to make sure that all of their repos are being managed in the same way. Something as simple as ensuring all Pull Requests get reviewed before merging has to be managed on a project by project basis. This can be particularly painful for organizations that have compliance requirements.
 
-The Github Organization Manager gets around that by letting you define your standards in one place and enforce them throughout your organization. It lets you define a default standard that will apply to every repository, or a variety of standards that you can apply to different repositories based on their needs. When a new repository is created these standards will automatically apply, saving admins from dealing with manual setup each time.
+The GitHub Organization Manager gets around that by letting you define your standards in one place and enforce them throughout your organization. It allows you to define a default standard that will apply to every repository, or a variety of standards that you can apply to different repositories based on their needs. When a new repository is created these standards will automatically apply, saving admins from dealing with manual setup each time.
 
 ## Installing
 
-This app can be installed [directly on Github](https://github.com/apps/organization-manager). Since this is an [open sorce project](https://github.com/gitconsensus/GithubOrganizer) self hosting is also an option, although it's a bit trickier.
+This app can be installed [directly on GitHub](https://github.com/apps/organization-manager). Since this is an [open sorce project](https://github.com/gitconsensus/GithubOrganizer) self hosting is also an option, although it's a bit trickier.
 
-Once installed you'll need to create a file named `organizer.yaml` in the `.github` repository in your organizationl. This file will contain all of the settings you want to have applied to your organization.
+Once installed you'll need to create a file named `organizer.yaml` in the `.github` repository in your organization. This file will contain all of the settings you want to have applied to your organization.
 
 ## Repository Settings
 
@@ -46,7 +46,7 @@ repositories:
       has_downloads: false
 ```
 
-Of course, putting individual rules for every repository can be rather burdensome. Another option is to define option groups- you can even extend existing option groups (like `default`) and make only the changes you need.
+Of course, putting individual rules for every repository can be rather burdensome. Another option is to define option groups - you can even extend existing option groups (like `default`) and make only the changes you need.
 
 In this example we keep the default repository settings but add a new set, `production`, which requires code reviews before pull requests get merged into the main branch.
 
@@ -71,7 +71,7 @@ repositories:
 
 This project offers two ways to assign repositories to the non-default group, Repository Topics and Inline Definitions.
 
-Repository Topics let the admins of the repository assign a topic to that repo and pick up the settings based off of that. This means no changes are required to the organization's settings file. The prefix `gho-` is added to the topic (turning the `production` category into the topic `gho-production`) to tell the Github Organization Manager which settings to apply to the repository.
+Repository Topics let the admins of the repository assign a topic to that repo and pick up the settings based off of that. This means no changes are required to the organization's settings file. The prefix `gho-` is added to the topic (turning the `production` category into the topic `gho-production`) to tell the GitHub Organization Manager which settings to apply to the repository.
 
 Another option is to define the options in the configuration file itself. The benefit of this is that settings are applied via Pull Request, which allows another level of enforcement and auditing. In this example we add `ExampleWebsite` and `.github` to the `production` category. To force people to use the config file it is also possible to disable topic assignment with the top level `topics_for_assignment` option (which is enabled by default).
 
@@ -99,7 +99,7 @@ repositories:
 
 ### Configuring Repository Features
 
-Each repository has a variety of Github features, such as projects and wikis, that this project can ensure are enabled or disabled.
+Each repository has a variety of GitHub features, such as projects and wikis, that this project can ensure are enabled or disabled.
 
 ```yaml
 repositories:
@@ -126,7 +126,7 @@ repositories:
 
 ### Automatically Label Issues
 
-Issues can have labels applied automatically based off of their repository. In this case every repository will automatically get labeled as `dev`, with two additional repositories (`example_repo` and `another_repo`) get tagged with `dev` and `production` as they inherit the production rules.
+Issues can have labels applied automatically based on their repository. In this case every repository will automatically get labeled as `dev`, with two additional repositories (`example_repo` and `another_repo`) get tagged with `dev` and `production`, as they inherit the production rules.
 
 ```yaml
 repositories:
@@ -178,7 +178,7 @@ repositories:
 
 ### Set Branch Protection
 
-Branch protection is an important piece of quality control, and can even be part of an organization's compliance program. Branch protection can be set globally, with additional requirements
+Branch protection is an important piece of quality control, and can even be part of an organization's compliance program. Branch protection can be set globally, with additional requirements:
 
 ```yaml
 repositories:
@@ -210,7 +210,7 @@ Branch protection has a lot of potential configuration options, including:
 - **enforce_admins**: will remove the ability for admins to override the protections to force a merge.
 - **required_approving_review_count**: sets a specific number of people required to approve reviews.
 
-In addition the `required_status_checks` has a few options of its own-
+In addition the `required_status_checks` has a few options of its own -
 
 - **strict**: requires a pull request to be up to date with the branch before it can be merged.
 - **context**: when empty all tests must pass, otherwise it takes an array individual tests (such `ci/circleci` or `coverage/coveralls`) which must pass.
@@ -231,7 +231,7 @@ repositories:
 
 ### Enforce Dependency Security
 
-A fantastic new feature of Github is that it can scan your repositories for upstream vulnerabilities and even make pull requests to resolve them. This feature is opt in, making it easy to forget. This project lets you set it on the organization level, so you never have to worry about accidentally leaving a repository vulnerable.
+A fantastic new feature of GitHub is that it can scan your repositories for upstream vulnerabilities, and even make pull requests to resolve them. This feature is opt in, making it easy to forget. This project allows you to set it on the organization level, so you never have to worry about accidentally leaving a repository vulnerable.
 
 ```yaml
 repositories:
@@ -243,7 +243,7 @@ repositories:
 
 ## Teams
 
-This function will create teams end keep their members up to date with the list in the configuration file, adding and removing members as needed.
+This function will create teams and keep their members up to date with the list in the configuration file, adding and removing members as needed.
 
 ```yaml
 teams:
@@ -315,7 +315,7 @@ labels:
 
 ### Automatically Label Repository Issues
 
-A common request is to give all issues in a specific repository labels without having to define a per-repository set of configurations. This can be done with the `repos` setting for the label.
+A common request is to give all issues in a specific repository labels, without having to define a per-repository set of configurations. This can be done with the `repos` setting for the label.
 
 ```yaml
 labels:
@@ -327,11 +327,11 @@ labels:
       - infra-puppet
 ```
 
-It's also possible to set this using [repository settings](#automatically-label-issues). Both of these settings will work together.
+It is also possible to set this using [repository settings](#automatically-label-issues). Both of these settings will work together.
 
 ### Enforce and Migrate Default Branches
 
-With the Github Organization Manager it's possible to enforce default branches across an organization. It's important to note that this is one of the most intrusive features of this project and should be used with care, as the project will actually branch the existing default branch to create the new one if needed (it will not delete the old branch). This can cause a serious disruption for developers if they aren't told about this in advance. However, for organizations that are making a conscious effort to change their default branch names this can remove a lot of manual work.
+With the GitHub Organization Manager it is possible to enforce default branches across an organization. It is important to note that this is one of the most intrusive features of this project and should be used with care, as the project will actually branch the existing default branch to create the new one if needed (it will not delete the old branch). This can cause a serious disruption for developers if they are not told about this in advance. However, for organizations that are making a conscious effort to change their default branch names, this can remove a lot of manual work.
 
 In this example we set the default branch to `main`
 
