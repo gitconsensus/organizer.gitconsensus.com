@@ -8,7 +8,7 @@ The GitHub Organization Manager gets around that by letting you define your stan
 
 ## Installing
 
-This app can be installed [directly on GitHub](https://github.com/apps/organization-manager). Since this is an [open sorce project](https://github.com/gitconsensus/GithubOrganizer) self hosting is also an option, although it's a bit trickier.
+This app can be installed [directly on Github](https://github.com/apps/organization-manager). Since this is an [open source project](https://github.com/gitconsensus/GithubOrganizer) self hosting is also an option, although it's a bit trickier.
 
 Once installed you'll need to create a file named `organizer.yaml` in the `.github` repository in your organization. This file will contain all of the settings you want to have applied to your organization.
 
