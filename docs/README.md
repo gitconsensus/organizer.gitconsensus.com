@@ -260,7 +260,7 @@ teams:
 
 ### Manage Organization Labels
 
-Keeping labels in sync can be a huge chore when a repository has a large number of repositories. This project keeps labels in sync, optionally cleaning up labels which aren't in the organization file.
+Keeping labels in sync can be a huge chore when an organization has a large number of repositories. This project keeps labels in sync, optionally cleaning up labels which aren't in the organization file.
 
 ```yaml
 labels_clean: true
